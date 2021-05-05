@@ -1,5 +1,5 @@
-import { getMetals, setMetal, getCurrentOrder } from "./database.js";
-import { currentOrder } from "./Orders.js";
+import { getMetals, setMetal, getCurrentOrder } from "./dataAccess.js";
+
 
 const metals = getMetals();
 

@@ -1,8 +1,5 @@
-import { getOrders } from "./database.js"
-import { getMetals } from "./database.js"
-import {getSizes} from "./database.js"
-import {getStyles} from "./database.js"
-import {getJewelryTypes , getCurrentOrder} from "./database.js"
+import { getOrders, getMetals, getSizes, getStyles, getJewelryTypes, getCurrentOrder } from "./dataAccess.js"
+
 
 const metals = getMetals();
 const sizes = getSizes()

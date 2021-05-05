@@ -2,7 +2,7 @@ import { Metals, currentMetalOnOrder } from "./Metals.js";
 import { DiamondSizes, currentSizeOnOrder } from "./DiamondSizes.js";
 import { JewelryStyles, currentStyleOnOrder } from "./JewelryStyles.js";
 import { Orders } from "./Orders.js";
-import { addCustomOrder} from "./database.js";
+import { addCustomOrder} from "./dataAccess.js";
 import { DiamondStyle, currentJewelryTypeOnOrder } from "./typeOfJewelry.js"
 
 
