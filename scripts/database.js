@@ -26,14 +26,19 @@ const database = {
         { id: 4, metal: "Platinum", price: 795.45 },
         { id: 5, metal: "Palladium", price: 1241.0 }
     ],
+    jewelryTypes: [
+        { id: 1, type: "Ring"},
+        { id: 2, type: "Earring"},
+        { id: 3, type: "Necklace"}
+    ],
     customOrders: [
-        {
-            id: 1,
-            metalId: 3,
-            sizeId: 2,
-            styleId: 3,
-            timestamp: 1614659931693
-        }
+        // {
+        //     id: 1,
+        //     metalId: 3,
+        //     sizeId: 2,
+        //     styleId: 3,
+        //     timestamp: 1614659931693
+        // },
     ]
 }
 
@@ -41,8 +46,16 @@ export const addCustomOrder = () => {
     // Copy the current state of user choices
     const newOrder = {...database.orderBuilder}
 
-    // Add a new primary key to the object
-    newOrder.id = [...database.customOrders].pop().id + 1
+    const totalCustomOrders = database.customOrders.length
+
+    // database.orders.length > 0 ?
+    
+    
+    if (totalCustomOrders < 1) {
+        newOrder.id = 1
+    } else {newOrder.id = [...database.customOrders].pop().id + 1}
+  
+    // newOrder.id = [...database.customOrders].pop().id + 1
 
     // Add a timestamp to the order
     newOrder.timestamp = Date.now()
@@ -58,7 +71,7 @@ export const addCustomOrder = () => {
 }
 
 export const getCurrentOrder = () => {
-    return database.orderBuilder
+    return {...database.orderBuilder}
 }
 
 export const getMetals = () => {
@@ -75,6 +88,14 @@ export const getSizes = () => {
 
 export const getOrders = () => {
     return [...database.customOrders]
+}
+
+export const getJewelryTypes = () => {
+    return [...database.jewelryTypes]
+}
+
+export const setJewelryType = (id) => {
+    database.orderBuilder.jewelryTypeId = id
 }
 
 export const setMetal = (id) => {

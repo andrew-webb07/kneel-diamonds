@@ -1,15 +1,17 @@
-import { Metals } from "./Metals.js";
-import { DiamondSizes } from "./DiamondSizes.js";
-import { JewelryStyles } from "./JewelryStyles.js";
+import { Metals, currentMetalOnOrder } from "./Metals.js";
+import { DiamondSizes, currentSizeOnOrder } from "./DiamondSizes.js";
+import { JewelryStyles, currentStyleOnOrder } from "./JewelryStyles.js";
 import { Orders } from "./Orders.js";
-import { addCustomOrder } from "./database.js";
-import { getMetals} from "./database.js"
+import { addCustomOrder} from "./database.js";
+import { DiamondStyle, currentJewelryTypeOnOrder } from "./typeOfJewelry.js"
+
 
 document.addEventListener("click", (event) => {
   if (event.target.id === "orderButton") {
     addCustomOrder();
   }
 });
+
 
 
 export const KneelDiamonds = () => {
@@ -31,9 +33,21 @@ export const KneelDiamonds = () => {
             </section>
         </article>
 
+        <article class="jewelryStyles">
+        ${DiamondStyle()}
+        </article>
+
         <article>
             <button id="orderButton">Create Custom Order</button>
 
+        </article>
+
+        <article>
+            <h2>Current Order</h2>
+           ${currentMetalOnOrder()}
+           ${currentSizeOnOrder()}
+           ${currentStyleOnOrder()}
+           ${currentJewelryTypeOnOrder()}
         </article>
 
         <article class="customOrders">
