@@ -1,7 +1,7 @@
 /* You need to create the rest of styles for the layout shown */
 
 .choices {
-    display: flex;
+    display:flex ;
 }
 
 .options {
@@ -13,3 +13,6 @@
     box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
 }
 
+.jewelryTypeList {
+    display: flex
+}
